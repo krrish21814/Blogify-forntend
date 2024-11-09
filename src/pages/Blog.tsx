@@ -30,8 +30,19 @@ export const Blog =()=>{
     </div>
         
     }
-
-    return<div>
-        <FullBlog blog={blog}/>
-    </div>
-}
+    if (!blog) {
+      return (
+        <div>
+          <div className="flex justify-center flex-col">
+            <p>Blog not found</p>
+          </div>
+        </div>
+      );
+    }
+  
+    return (
+      <div>
+        <FullBlog blog={blog} />
+      </div>
+    );
+  };
